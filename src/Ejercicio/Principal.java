@@ -9,6 +9,8 @@ import java.awt.EventQueue;
 import java.awt.Font;
 import javax.swing.JButton;
 import javax.swing.SwingConstants;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class Principal extends JFrame {
 
@@ -49,16 +51,35 @@ public class Principal extends JFrame {
 		contentPane.add(lblGrupo);
 		
 		JButton btnBoton1 = new JButton("Ejercicio 1");
+		//EJERCICIO 1
+		btnBoton1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Ejercicio1 ejer1 = new Ejercicio1();
+				ejer1.setVisible(true);
+			}
+		});
 		btnBoton1.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btnBoton1.setBounds(119, 69, 113, 23);
 		contentPane.add(btnBoton1);
 		
 		JButton btnBoton2 = new JButton("Ejercicio 2");
+		//EJERCICIO 2
+		btnBoton2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		
 		btnBoton2.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btnBoton2.setBounds(119, 124, 113, 23);
 		contentPane.add(btnBoton2);
 		
 		JButton btnBoton3 = new JButton("Ejercicio 3");
+		//EJERCICIO 3 
+		btnBoton3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
 		btnBoton3.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btnBoton3.setBounds(119, 185, 113, 23);
 		contentPane.add(btnBoton3);
