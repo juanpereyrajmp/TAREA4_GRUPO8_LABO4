@@ -7,6 +7,8 @@ import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.border.TitledBorder;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class Ejercicio2 extends JFrame{
 	
@@ -94,10 +96,27 @@ public class Ejercicio2 extends JFrame{
     	panelBotones.setLayout(null);
     	
     	JButton btnCalcular = new JButton("CALCULAR");
+    	//calcular 
+    	btnCalcular.addActionListener(new ActionListener() {
+    		public void actionPerformed(ActionEvent arg0) {
+
+    			int tot = Integer.parseInt(txt1.getText()) + Integer.parseInt(txt2.getText()) + Integer.parseInt(txt3.getText());
+    		        		double promedio = tot/3;
+    		        		
+    			//segun promedio indicar con enumerable la condicion.
+    		        		
+    		        		
+    		}
+    	});
     	btnCalcular.setBounds(10, 11, 117, 47);
     	panelBotones.add(btnCalcular);
     	
     	JButton btnNuevo = new JButton("NUEVO");
+    	btnNuevo.addActionListener(new ActionListener() {
+    		public void actionPerformed(ActionEvent e) {
+    			LimpiarTextField();
+    		}
+    	});
     	btnNuevo.setBounds(10, 69, 117, 47);
     	panelBotones.add(btnNuevo);
     	
@@ -106,5 +125,16 @@ public class Ejercicio2 extends JFrame{
     	panelBotones.add(btnSalir);
 
         
+    }
+    void LimpiarTextField() {
+    	txt1.setText("");
+    	txt2.setText("");
+    	txt3.setText("");
+    	txtPromedio.setText("");
+    	txtCondicion.setText("");
+
+    }
+    enum Condicion{
+    	Promocion,Libre,Regular
     }
 }
