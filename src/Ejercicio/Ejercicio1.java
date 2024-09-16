@@ -31,7 +31,8 @@ public class Ejercicio1 extends JFrame {
 		setResizable(false);
 		setTitle("Contactos");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);//DISPOSE_ON_CLOSE Cierra solo esta ventana
-		setBounds(100, 100, 600, 400);
+		setSize(500, 400);
+    	setLocationRelativeTo(null);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);

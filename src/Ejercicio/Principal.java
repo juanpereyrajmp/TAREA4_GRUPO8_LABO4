@@ -37,7 +37,8 @@ public class Principal extends JFrame {
 	public Principal() {
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 361, 300);
+		setSize(300, 300);
+    	setLocationRelativeTo(null);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
@@ -46,7 +47,7 @@ public class Principal extends JFrame {
 		
 		JLabel lblGrupo = new JLabel("GRUPO NRO: 8");
 		lblGrupo.setHorizontalAlignment(SwingConstants.CENTER);
-		lblGrupo.setBounds(119, 27, 113, 19);
+		lblGrupo.setBounds(91, 26, 113, 19);
 		lblGrupo.setFont(new Font("Tahoma", Font.BOLD, 15));
 		contentPane.add(lblGrupo);
 		
@@ -59,7 +60,7 @@ public class Principal extends JFrame {
 			}
 		});
 		btnBoton1.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnBoton1.setBounds(119, 69, 113, 23);
+		btnBoton1.setBounds(91, 68, 113, 23);
 		contentPane.add(btnBoton1);
 		
 		JButton btnBoton2 = new JButton("Ejercicio 2");
@@ -72,7 +73,7 @@ public class Principal extends JFrame {
 		});
 		
 		btnBoton2.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnBoton2.setBounds(119, 124, 113, 23);
+		btnBoton2.setBounds(91, 123, 113, 23);
 		contentPane.add(btnBoton2);
 		
 		JButton btnBoton3 = new JButton("Ejercicio 3");
@@ -83,7 +84,7 @@ public class Principal extends JFrame {
 			}
 		});
 		btnBoton3.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		btnBoton3.setBounds(119, 185, 113, 23);
+		btnBoton3.setBounds(91, 184, 113, 23);
 		contentPane.add(btnBoton3);
 	}
 }
