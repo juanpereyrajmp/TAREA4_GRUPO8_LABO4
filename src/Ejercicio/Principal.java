@@ -66,6 +66,8 @@ public class Principal extends JFrame {
 		//EJERCICIO 2
 		btnBoton2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				Ejercicio2 ejer2 = new Ejercicio2();
+				ejer2.setVisible(true);
 			}
 		});
 		

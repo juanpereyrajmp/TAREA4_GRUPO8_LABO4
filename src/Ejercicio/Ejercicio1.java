@@ -1,7 +1,5 @@
 package Ejercicio;
 
-import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -28,21 +26,9 @@ public class Ejercicio1 extends JFrame {
 	private JLabel lblLosDatos;
 
 
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Ejercicio1 frame = new Ejercicio1();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
 
 	public Ejercicio1() {
+		setResizable(false);
 		setTitle("Contactos");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);//DISPOSE_ON_CLOSE Cierra solo esta ventana
 		setBounds(100, 100, 600, 400);
