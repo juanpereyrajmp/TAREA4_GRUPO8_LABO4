@@ -132,7 +132,7 @@ public class Ejercicio2 extends JFrame{
     	panelBotones.setLayout(null);
     	
     	JButton btnCalcular = new JButton("CALCULAR");
-    	//calcular 
+    	
     	btnCalcular.addActionListener(new ActionListener() {
     		public void actionPerformed(ActionEvent arg0) {
     			
@@ -145,37 +145,54 @@ public class Ejercicio2 extends JFrame{
     			}
     			
 
-    			//int tot = Integer.parseInt(txt1.getText()) + Integer.parseInt(txt2.getText()) + Integer.parseInt(txt3.getText());
-    		        		//double promedio = tot/3;
-    		        		
-    			//segun promedio indicar con enumerable la condicion.
-    			
-
-    		        		
-    		    try {
-    		         double nota1 = Double.parseDouble(txt1.getText());
-    		         double nota2 = Double.parseDouble(txt2.getText());
-    		         double nota3 = Double.parseDouble(txt3.getText());
-
-    		         
-    		         if (nota1 < 1 || nota1 > 10 || nota2 < 1 || nota2 > 10 || nota3 < 1 || nota3 > 10) {
-    		             txtPromedio.setText("Error");
-    		             txtCondicion.setText("Notas fuera de rango");
-    		             return;
-    		          }
-
-    		          String estadoTP = (String) comboBox.getSelectedItem();
-
-    		          double promedio = (nota1 + nota2 + nota3) / 3;
-    		          txtPromedio.setText(String.format("%.2f", promedio));
-
-    		          String condicion = determinarCondicion(nota1, nota2, nota3, estadoTP);
-    		          txtCondicion.setText(condicion);
-
-    		         } catch (NumberFormatException e) {
-    		        	 JOptionPane.showMessageDialog(null, "Ingresa valores válidos", "Error", JOptionPane.ERROR_MESSAGE);
-    		                }
-    		   }    		
+    			try {
+    	    		double Nota1=Double.parseDouble(txt1.getText());
+    	    		double Nota2=Double.parseDouble(txt2.getText());
+    				double Nota3= Double.parseDouble(txt3.getText());
+    				
+    				
+    				double notasAlumno[] = new double [3];
+    				notasAlumno[0] = Nota1;
+    				notasAlumno[1] = Nota2;
+    				notasAlumno[2] = Nota3;
+    				
+    				boolean numeroFueraDeRango = false;
+    				
+    				for (int i = 0; i < 3 ; i++) {
+    					if (notasAlumno[i] < 1.0 || notasAlumno[i] >10.0) {
+    						numeroFueraDeRango = true;
+    					}
+    				}
+    				
+    				if (numeroFueraDeRango) {
+    					JOptionPane.showMessageDialog(null, "Las notas deben ser del 1 al 10", "Error", JOptionPane.ERROR_MESSAGE);
+    				}
+    				else {
+    						if(comboBox.getSelectedItem().equals("Desaprobado")) {
+    		    			txtCondicion.setText("Libre");        			
+    			    		}
+    			    		else if(Nota1<6 || Nota2<6 || Nota3<6) {		
+    			    				txtCondicion.setText("Libre");	
+    						}
+    			    		else if(Nota1>=8 && Nota2>=8 && Nota3>=8) {
+    			    			txtCondicion.setText("Promocionado");	
+    						}
+    			    		else if((Nota1>=6 && Nota1<=8) && (Nota2>=6 && Nota2<=8) && (Nota3>=6 && Nota3<=8) && comboBox.getSelectedItem().equals("Aprobado")) {
+    			    			txtCondicion.setText("Regular");
+    			    		}
+    			    		else {
+    			    			txtCondicion.setText("Regular");
+    			    		}
+    			    		double Promedio =((Nota1+Nota2+Nota3)/3);
+    			    		String prom = String.format("%.2f", Promedio);
+    			    		txtPromedio.setText(prom);
+    			    		
+    					}
+    				}
+    	    		catch(NumberFormatException exc) {
+    	    			  JOptionPane.showMessageDialog(null, "Ingresa valores validos", "Error", JOptionPane.ERROR_MESSAGE);
+    	    			  
+    	    		}}	
     		        		
     		   
     	});
