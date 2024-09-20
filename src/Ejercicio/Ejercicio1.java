@@ -39,19 +39,19 @@ public class Ejercicio1 extends JFrame {
 		contentPane.setLayout(null);
 		
 		JLabel lblNombre = new JLabel("Nombre");
-		lblNombre.setBounds(87, 51, 46, 14);
+		lblNombre.setBounds(87, 51, 61, 14);
 		contentPane.add(lblNombre);
 		
 		JLabel lblApellido = new JLabel("Apellido");
-		lblApellido.setBounds(87, 86, 46, 14);
+		lblApellido.setBounds(87, 86, 61, 14);
 		contentPane.add(lblApellido);
 		
 		JLabel lblTelefono = new JLabel("Telefono");
-		lblTelefono.setBounds(87, 112, 46, 45);
+		lblTelefono.setBounds(87, 112, 61, 45);
 		contentPane.add(lblTelefono);
 		
 		JLabel lblFechaNac = new JLabel("Fecha Nac.");
-		lblFechaNac.setBounds(86, 152, 80, 27);
+		lblFechaNac.setBounds(86, 152, 98, 27);
 		contentPane.add(lblFechaNac);
 		
 		txtNombre = new JTextField();

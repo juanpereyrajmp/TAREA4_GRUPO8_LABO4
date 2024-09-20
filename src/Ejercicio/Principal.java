@@ -80,7 +80,8 @@ public class Principal extends JFrame {
 		//EJERCICIO 3 
 		btnBoton3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				
+				Ejercicio3 ejer3 = new Ejercicio3();
+				ejer3.setVisible(true);
 			}
 		});
 		btnBoton3.setFont(new Font("Tahoma", Font.PLAIN, 14));
