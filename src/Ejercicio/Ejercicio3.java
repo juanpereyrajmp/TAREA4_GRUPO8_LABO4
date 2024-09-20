@@ -4,15 +4,19 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JRadioButton;
 import javax.swing.border.LineBorder;
 import java.awt.Color;
 
 import javax.swing.ButtonGroup;
+import javax.swing.ButtonModel;
 import javax.swing.JButton;
 import java.awt.Font;
 import javax.swing.JCheckBox;
 import javax.swing.JTextField;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class Ejercicio3 extends JFrame {
 
@@ -46,6 +50,7 @@ public class Ejercicio3 extends JFrame {
 		grupoSO = new ButtonGroup();
 		
 		JRadioButton rdbtnWindows = new JRadioButton("Windows");
+		rdbtnWindows.setSelected(true);
 		rdbtnWindows.setBounds(154, 13, 85, 23);
 		panelRadio.add(rdbtnWindows);
 		grupoSO.add(rdbtnWindows);
@@ -97,6 +102,28 @@ public class Ejercicio3 extends JFrame {
 		txtHoras.setColumns(10);
 		
 		JButton btnAceptar = new JButton("Aceptar");
+		//btn para mostrar mensaje.
+		btnAceptar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				//vars a mostrar
+				String SelectedSO;
+				
+				if(rdbtnLinux.isSelected()) {
+					SelectedSO= rdbtnLinux.getText();
+				}else if(rdbtnMac.isSelected()) {
+					SelectedSO=rdbtnMac.getText();
+				}else {
+					SelectedSO = rdbtnWindows.getText();
+				}
+				
+				
+				
+				String msj = SelectedSO + " - " + " - "+ " - " ;
+				
+				//mostrar mediante .. : 
+				JOptionPane.showMessageDialog(null, msj);
+			}
+		});
 		btnAceptar.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		btnAceptar.setBounds(323, 244, 96, 29);
 		contentPane.add(btnAceptar);

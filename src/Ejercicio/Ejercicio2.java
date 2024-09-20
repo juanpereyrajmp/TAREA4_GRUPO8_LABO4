@@ -246,10 +246,6 @@ public class Ejercicio2 extends JFrame{
 
         return "Libre";
     }
-    
- 
-    
-    enum Condicion{
-    	Promocion,Libre,Regular
-    }
+
+   
 }
